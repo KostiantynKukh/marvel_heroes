@@ -1,0 +1,12 @@
+@import '../../styles/styles';
+
+header.header {
+  padding: 1vh;
+  background: $bgcolor;
+  .title {
+    font-size: 5rem;
+    color: $textColor;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

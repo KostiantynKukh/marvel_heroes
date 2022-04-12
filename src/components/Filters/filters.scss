@@ -1,0 +1,39 @@
+@import '../../styles/styles';
+
+.filters_wrapper {
+  position: relative;
+
+  .filters_dropdown {
+    position: absolute;
+    padding: 10px;
+    right: 0;
+    top: 130%;
+    height: 40vh;
+    background: $textColor;
+    width: 400px;
+    z-index: 2;
+    overflow: auto;
+    box-shadow: 0 0 10px 1px #ababab;
+    border-radius: 5px 5px 0 0;
+    @include flex(column, flex-start, flex-start, nowrap);
+    .filters_checkbox {
+      margin-left: 0;
+      font-size: 1.7rem;
+    }
+  }
+
+  .filters_footer {
+    position: absolute;
+    width: 400px;
+    right: 0;
+    top: calc(130% + 40vh);
+    z-index: 3;
+    @include flex(row, space-between, center);
+    padding: 5px;
+    background: $textColor;
+    border-radius: 0 0 5px 5px;
+    transform: translateY(-1%);
+    box-shadow: 0 0 10px 1px #ababab;
+  }
+
+}

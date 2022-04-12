@@ -1,0 +1,14 @@
+$bgcolor: red;
+$bgcolor1: rgba(0, 0, 0, 0.5);
+$borderColor: #5b5b5b;
+$focusBorderColor: #ffae00;
+$textColor: white;
+$textColorDark: #424242;
+
+@mixin flex ($flex-direction: row, $justify-content: flex-start, $align-items: flex-start, $flex-wrap: wrap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}

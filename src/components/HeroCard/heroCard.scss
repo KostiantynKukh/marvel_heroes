@@ -1,0 +1,27 @@
+@import '../../styles/styles';
+
+.hero-card {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+  &:hover {
+    .card-img {
+      transition: .5s;
+      transform: scale(1.1);
+    }
+    cursor: pointer;
+  }
+
+  .card-title {
+    position: absolute;
+    bottom: 0;
+    background: $bgcolor1;
+    color: $textColor;
+    font-size: 2rem;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+  }
+}
