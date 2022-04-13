@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Redirect } from "react-router-dom";
 import Header from "./components/Header/Header";
 import './app.scss';
 import 'antd/dist/antd.css';
@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="hero/:id" element={<Hero />}/>
+        <Route path="*" element={<Home />}/>
       </Routes>
 
     </div>
