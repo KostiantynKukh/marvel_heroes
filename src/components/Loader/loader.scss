@@ -1,3 +1,10 @@
+@import '../../styles/styles';
+
+.loader_wrapper {
+  width: 100%;
+  @include flex(row, center, center);
+  height: 30vh;
+}
 .lds-default {
   display: inline-block;
   position: relative;

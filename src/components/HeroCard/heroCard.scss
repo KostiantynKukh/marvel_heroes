@@ -5,13 +5,18 @@
   height: 250px;
   position: relative;
   overflow: hidden;
-  margin: 20px;
+  margin: 5px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
   &:hover {
     .card-img {
       transition: .5s;
       transform: scale(1.1);
     }
     cursor: pointer;
+  }
+  .card-img {
+    max-width: 100%;
   }
 
   .card-title {
@@ -23,5 +28,14 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 0;
+  }
+
+  @include _576 {
+    width: 100%;
+    height: max-content;
+    .card-img {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }

@@ -1,0 +1,52 @@
+@import '../../styles/styles';
+
+.info_group {
+  @include flex(row, space-between, flex-start);
+  color: $textColorLight;
+
+  @include _576 {
+    flex-direction: column;
+  }
+
+  .info_title {
+    max-width: 30%;
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 120%;
+      left: 10%;
+      width: 70%;
+      height: 2px;
+      background: $borderColor;
+      @include _576 {
+        left: 0;
+        width: 100%;
+        top: 100%;
+      }
+    }
+
+    @include _992 {
+      font-size: 3rem;
+    }
+
+    @include _576 {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+  }
+  .info_description {
+    max-width: 70%;
+    width: 100%;
+    font-size: 2rem;
+    text-align: justify;
+    padding-top: 1rem;
+
+    @include _576 {
+      max-width: 100%;
+    }
+  }
+}

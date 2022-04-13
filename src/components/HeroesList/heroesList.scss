@@ -2,13 +2,7 @@
 
 .heroes-list {
   width: 100%;
-  @include flex(row, space-between, flex-start);
-  .loader_wrapper {
-    width: 100%;
-    @include flex(row, center, center);
-    height: 30vh;
-  }
-
+  @include flex(row, center, flex-start);
   .no-heroes{
     width: 100%;
     text-align: center;
@@ -16,5 +10,7 @@
     font-size: 3rem;
     padding: 20px;
   }
-
+  @include _576 {
+    @include flex(column, flex-start, stretch, nowrap);
+  }
 }

@@ -3,6 +3,7 @@ import getEvents from "../../utils/getEvents";
 import './filters.scss'
 import {Checkbox, Button} from "antd";
 import _ from 'lodash';
+import {RiFilterLine, RiFilterFill} from 'react-icons/ri';
 
 const Filters = ({eventsHandler}) => {
   const [events, setEvents] = useState([])
@@ -48,6 +49,9 @@ const Filters = ({eventsHandler}) => {
         className="filters_title"
         onClick={() => dropdownHandler()}
         >
+        {
+          isDropdown ? <RiFilterFill className="filters_title_icon" /> : <RiFilterLine className="filters_title_icon" />
+        }
         Events
       </Button>
       <div className="filters_dropdown" style={{display: isDropdown ? 'flex' : 'none'}}>

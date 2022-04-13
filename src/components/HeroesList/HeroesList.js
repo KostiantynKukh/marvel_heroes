@@ -4,6 +4,7 @@ import HeroCard from "../HeroCard/HeroCard";
 import './heroesList.scss'
 import getHeroes from "../../utils/getHeroes";
 import Loader from '../Loader/Loader';
+import {Link} from "react-router-dom";
 
 const HeroesList = ({searchValue, events}) => {
     const [heroes, setHeroes] = useState([]);
@@ -21,7 +22,6 @@ const HeroesList = ({searchValue, events}) => {
 
     const fetchData = async (limit, searchValue, events) => {
         setLoading(true);
-        console.log('events', events);
         let result = await getHeroes(limit, searchValue, events );
         setHeroes(result);
         setLoading(false);
@@ -33,11 +33,13 @@ const HeroesList = ({searchValue, events}) => {
                 {
                     !loading && heroes.length ? heroes.map((item => {
                         return (
+                          <Link key={item.id} to={`/hero/${item.id}`}>
                             <HeroCard
-                                key={item.id}
-                                name={item.name}
-                                url={`${item.thumbnail.path}/standard_fantastic.${item.thumbnail.extension}`}
+                              name={item.name}
+                              url={`${item.thumbnail.path}/standard_fantastic.${item.thumbnail.extension}`}
                             />
+                          </Link>
+
                         )
                     })) : loading ?
                         <div className="loader_wrapper">

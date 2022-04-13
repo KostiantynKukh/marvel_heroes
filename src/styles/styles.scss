@@ -1,9 +1,16 @@
 $bgcolor: red;
 $bgcolor1: rgba(0, 0, 0, 0.5);
+$bgcolorLight: rgba(138, 138, 138, 0.5);
+$bgcolorLight1: rgb(162, 162, 162);
+$bgcolorLight2: rgba(206, 206, 206, 0.1);
 $borderColor: #5b5b5b;
 $focusBorderColor: #ffae00;
 $textColor: white;
+$textColorLight: #d3c9b4;
 $textColorDark: #424242;
+$border-radius: 5px;
+$box-shadow: 0 0 2px 1px $bgcolorLight;
+$box-shadow1: 0 0 10px 1px #ababab;
 
 @mixin flex ($flex-direction: row, $justify-content: flex-start, $align-items: flex-start, $flex-wrap: wrap) {
   display: flex;
@@ -11,4 +18,30 @@ $textColorDark: #424242;
   justify-content: $justify-content;
   align-items: $align-items;
   flex-wrap: $flex-wrap;
+}
+
+@mixin _992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _576 {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.App {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }

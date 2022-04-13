@@ -1,0 +1,40 @@
+@import '../../styles/styles';
+
+.hero {
+  @include flex(column, flex-start, stretch, nowrap);
+  padding-top: 20px;
+  &_intro {
+    @include flex(row, stretch, stretch, nowrap);
+    margin-bottom: 20px;
+    border-radius: $border-radius;
+    overflow: hidden;
+    .img_wrapper {
+      width: 100%;
+      max-width: 464px;
+      @include _576 {
+        max-width: 576px;
+      }
+      .hero_img {
+        width: 100%;
+      }
+    }
+
+    @include _576 {
+      flex-direction: column;
+    }
+  }
+  &_title {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+    font-size: 5rem;
+    background: $bgcolorLight2;
+    color: white;
+    @include flex (row, center,center);
+    text-shadow: 1px 1px 30px black;
+
+    @include _992 {
+      font-size: 4rem;
+    }
+  }
+}
